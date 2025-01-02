@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Billing System</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Restaurant</h1>
+    </header>
+    <div class="container">
+        <form id="name-form">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" placeholder="Your name">
+            <button type="button" onclick="startOrder()">Start Order</button>
+        </form>
+        <div id="menu-section" style="display: none;">
+            <h2>Select a Cuisine</h2>
+            <button onclick="selectCuisine('Indian')">Indian</button>
+            <button onclick="selectCuisine('Chinese')">Chinese</button>
+            <button onclick="selectCuisine('Italian')">Italian</button>
+        </div>
+        <div id="menu-items" style="display: none;">
+            <h3>Menu Items</h3>
+            <div id="menu-list"></div>
+            <button onclick="finishOrder()">Finish Order</button>
+        </div>
+
+        <div id="bill-summary">
+            <div class="bill-summary-header">
+                <span class="bill-time">Time: <span id="bill-time"></span></span>
+                <h3>ABC Restaurant</h3>
+                <span class="bill-date">Date: <span id="bill-date"></span></span>
+            </div>
+            <h3>Bill Summary</h3>
+            <div id="bill-details">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price (Rs.)</th>
+                            <th>Quantity</th>
+                            <th>Total (Rs.)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bill-items"></tbody>
+                </table>
+            </div>
+            <p>Subtotal: Rs.<span id="subtotal"></span></p>
+            <p>GST (10%): Rs.<span id="gst"></span></p>
+            <p>Discount (5%): Rs.<span id="discount"></span></p>
+            <h4>Total: Rs.<span id="total"></span></h4>
+            <button onclick="addMoreItems()">Add More Items</button>
+            <button onclick="resetOrder()">Start New Order</button>
+            <button onclick="printReceipt()">Print Receipt</button>
+        </div>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
